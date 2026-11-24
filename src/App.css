@@ -1,0 +1,532 @@
+
+/* ==============================
+   COLOUR VARIABLES
+============================== */
+
+:root {
+  --primary: #2563eb;
+  --secondary: #0ea5e9;
+  --dark-blue: #1e3a8a;
+  --light-blue: #eff6ff;
+  --border: #dbeafe;
+
+  --gradient: linear-gradient(
+    135deg, #1e3a8a, #2563eb, #38bdf8
+  );
+
+  --button-gradient: linear-gradient(
+    135deg, #2563eb, #0ea5e9
+  );
+
+  --weather-gradient: linear-gradient(
+    135deg, #1e3a8a, #2563eb, #0284c7
+  );
+
+  --shadow: 0 4px 15px #2563eb15;
+}
+
+/* ==============================
+   MAIN LAYOUT
+============================== */
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px;
+}
+
+section {
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  color: var(--dark-blue);
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+header {
+  background: var(--gradient);
+  color: white;
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+header p {
+  color: var(--border);
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+  margin-bottom: 15px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 5px;
+  z-index: 100;
+  overflow-x: auto;
+}
+
+.navigation button {
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--dark-blue);
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.navigation button:hover {
+  background: var(--border);
+  transform: none;
+  box-shadow: none;
+}
+
+.navigation button.nav-active {
+  background: var(--gradient);
+  color: white;
+}
+
+/* ==============================
+   FORMS
+============================== */
+
+label {
+  display: block;
+  margin: 15px 0 6px;
+  font-weight: 600;
+  color: #334155;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #f8fbff;
+  color: #1e293b;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--border);
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+button {
+  background: var(--button-gradient);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(
+    135deg, #1d4ed8, #0284c7
+  );
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.delete {
+  background: linear-gradient(
+    135deg, #dc2626, #f87171
+  );
+}
+
+.delete:hover {
+  background: #b91c1c;
+}
+
+/* ==============================
+   MULTIPLE DESTINATIONS
+============================== */
+
+.destination-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.destination-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.destination-row button {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ==============================
+   BUDGET
+============================== */
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.budget-card {
+  background: var(--gradient);
+  color: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.budget-card h2 {
+  color: white;
+  margin: 10px 0;
+}
+
+.budget-card p {
+  color: var(--border);
+}
+
+/* ==============================
+   ITINERARY
+============================== */
+
+.plan-card {
+  background: var(--light-blue);
+  border-left: 5px solid var(--primary);
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.plan-card h3 {
+  color: var(--dark-blue);
+  margin-top: 0;
+}
+
+.plan-card p {
+  color: #475569;
+}
+
+/* ==============================
+   TRAVEL CALENDAR
+============================== */
+
+.calendar-section .rbc-calendar {
+  margin-top: 20px;
+}
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.calendar-legend > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.rbc-toolbar {
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.rbc-toolbar-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+.rbc-toolbar button {
+  background: white;
+  color: var(--dark-blue);
+  margin: 0;
+  padding: 8px 12px;
+}
+
+.rbc-toolbar button:hover {
+  background: var(--border);
+  transform: none;
+  box-shadow: none;
+}
+
+.rbc-toolbar button.rbc-active {
+  background: var(--gradient);
+  color: white;
+}
+
+.rbc-header {
+  background: var(--gradient);
+  color: white;
+  padding: 12px 0;
+}
+
+.rbc-today {
+  background: var(--border);
+}
+
+.rbc-event {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.rbc-off-range-bg {
+  background: #f1f5f9;
+}
+
+.rbc-month-view {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ==============================
+   COMPACT WEATHER DASHBOARD
+============================== */
+
+.weather-section {
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.weather-section h2 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.weather-section > p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.weather-card {
+  background: var(--weather-gradient);
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  min-width: 0;
+  box-shadow: var(--shadow);
+}
+
+.weather-card h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.weather-card p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.weather-card h4 {
+  font-size: 12px;
+  margin: 10px 0 6px;
+}
+
+.weather-temperature {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.weather-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+/* Seven-day forecast */
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(46px, 1fr));
+  gap: 4px;
+  overflow-x: auto;
+}
+
+.forecast-day {
+  background: #ffffff20;
+  border: 1px solid #ffffff20;
+  padding: 6px 3px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 11px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.forecast-day p {
+  font-size: 10px;
+  min-height: 28px;
+  margin: 4px 0;
+}
+
+.forecast-day strong {
+  font-size: 12px;
+}
+
+.forecast-day small {
+  display: block;
+  font-size: 10px;
+  margin: 3px 0;
+  opacity: 0.8;
+}
+
+.weather-section a {
+  color: var(--primary);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+  text-align: center;
+  color: #64748b;
+  padding: 25px;
+  font-size: 13px;
+}
+
+/* ==============================
+   TABLET RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+
+  .navigation {
+    justify-content: flex-start;
+  }
+
+  .navigation button {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-card {
+    padding: 12px;
+  }
+
+  .weather-temperature {
+    font-size: 28px;
+  }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 12px;
+  }
+
+  header {
+    padding: 25px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  .budget-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .budget-card {
+    padding: 15px;
+  }
+
+  .calendar-section {
+    padding: 10px;
+  }
+
+  .rbc-toolbar {
+    flex-direction: column;
+  }
+
+  .rbc-toolbar-label {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .rbc-event {
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .rbc-header {
+    font-size: 11px;
+  }
+}
