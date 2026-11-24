@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 
-import Header from "./components/header";
+import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import TripDetails from "./components/TripDetails";
 import Budget from "./components/Budget";
